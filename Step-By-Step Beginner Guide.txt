@@ -1,0 +1,285 @@
+STEP-BY-STEP GUIDE
+==================
+
+This is a step-by-step guide for first-time users of the MA Labs Automated
+Meter Reading File Handler v1.4 program. For more detailed information on the
+program, licenses, troubleshooting, setup, and advanced configuration, see the
+"README.md" file.
+
+This program requires a modern web browser capable of running most HTML5 code.
+If you are using the latest Internet Explorer, Google Chrome, Opera, Safari, or
+Firefox, you should be fine. Google chrome is recommended. For more information,
+see the "README.md" file, section 3.
+
+--------------------------------------------------------------------------------
+
+Step 1: Download Brackets.
+
+    Go to http://brackets.io to download the software.
+
+--------------------------------------------------------------------------------
+
+Step 2: Get your API Access keys - there are 3 of them: Application Key, Access
+        Key, API Secret Key.
+
+    Go to http://www.maintenanceassistant.com/api/docs/guide.html#api_keys for
+    details on how to get your keys.
+    
+    Write the keys down, they'll be needed later.
+
+--------------------------------------------------------------------------------
+
+Step 3: Put your meter reading CSV files in the "data" folder.
+
+    Make sure that all of the files follow the following pattern:
+
+        <number><name>.csv
+
+    The <name> has to remain the same across all files, while the <number> has
+    to start with 1 and then increase by 1 for each csv file. 
+
+    To see an example set of files, go to the "EXdata" folder in the "examples"
+    folder. For this guide, the example file is "1data.csv". To read an
+    explanation for the other example files, see the "README.md" file, section
+    11.
+
+--------------------------------------------------------------------------------
+
+Step 4: Configure the "config.txt" file in the "config" folder.
+
+    IMPORTANT: The settings data is put immediately after the tildes (“~”).
+    There are 18 settings in total, labelled from 0 to 17.
+
+    To view an example configuration, see the "EXconfig.txt" in the "examples"
+    folder.
+    
+    NOTE: For this step, everything following ">>>" are instructions only.
+
+
+
+    API SETUP  (Mandatory)
+    ---------
+
+    0: API URL
+
+    >>> Type the redirect URL. It is your cmms url with /api/ added to the end.
+
+
+    1: Application Key
+
+    >>> Place the application key in this setting.
+
+
+    2: Access Key
+
+    >>> Place the access key in this setting.
+
+
+    3: API Secret Key
+
+    >>> Place the API secret key in this setting.
+
+
+    FORMAT SETUP (Optional)
+    ------------
+
+    4: Meter Reading Only  (Optional)
+  
+    >>> Description: This setting is for files that only have one column of data
+        with no headings. (see example file "2data.csv”). Using this setting
+        requires settings 6, 7, and 8.
+
+    >>> Setting: Put a "0" to turn off the setting, or change to "1" to turn it
+        on.
+
+
+    5: Delimiter  (Optional)
+   
+    >>> Description: This setting is for files which aren't using a comma as the
+        delimiter. For more information, see the "README.md" file, sections 6.2
+        and 11.3.
+
+    >>> Setting: Leave this setting as blank.
+
+
+    6: Quotation Wrapped Data (Optional)
+
+    >>> Description: This setting is for CSV files which put quotations ("")
+        around the data.
+        
+        IMPORTANT: This is common in CSV files. The easiest way to tell if
+        your CSV files have quotations around each item in every row is to open
+        the file using Notepad (on Windows), or an equivalent basic text editing
+        program.
+    
+    >>> Setting: Leave as "0" to turn off the setting, or change to "1" to turn
+        it on.
+
+
+    7: Automatic Date Reading  (Optional)
+   
+    >>> Description: This setting is for when the CSV files don't have a dates
+        column. (see example file "5data.csv”). It gives the Meter Readings the
+        day and time of when the  program read the file instead.
+
+    >>> Setting: Leave as "0" to turn off the setting, or change to "1" to turn
+        it on.
+
+
+    8: Set Default ID  (Optional)
+   
+    >>> Description: This setting is for when the CSV files don't have an Asset
+        ID column. (see example file "4data.csv”). It links the Meter Readings
+        to the asset ID specified in this setting.
+
+    >>> Setting: Leave this setting empty to ignore it, or enter an Asset ID.
+
+
+    9: Set Default Unit  (Optional)
+  
+    >>> Description: This setting is for when the CSV files don't have a unit
+        column. (see example file "5data.csv”). It tells the CMMS that all the
+        meter readings read by this program are in the unit stated in this
+        setting.
+
+    >>> Setting: Leave this setting empty to ignore it, or enter a unit of
+        measurement registered in the CMMS.
+
+
+    FILE SETUP
+    ----------
+
+    10: File Name (Mandatory)
+
+    >>>	Setting: Enter the name used for all of the files here. Make sure to
+        include the .csv at the end.
+
+
+    11: Asset ID Column Header (Mandatory)
+
+    >>> Setting: Enter the header for the column in the files containing the IDs
+        of the assets the meter readings are related to. The same header must
+        exist in all files.
+
+        IMPORTANT: The asset ID is different from the asset code! To view asset
+        IDs, take the following steps:
+    
+        1. Log into the CMMS (if not already logged in).
+        2. Select Assets from the menu on the left.
+        3. Click on the "Set Visible Columns" button.
+            -On a desktop, the button is a small image of a list made of squares
+            and rectangles, located to the far right of the page, above the list
+            of assets.
+        4. Check the box labelled "id".
+        5. Click the "OK" button.
+        6. The ID value of the assets should appear as a new column in the list.
+
+
+    12: Meter Reading Value Column Header (Mandatory)
+
+    >>> Setting: Enter the header for the column in the files containing the
+        meter reading values. The same header must exist in all files.
+
+
+    13: Meter Reading Value Unit Measurement Column Header (Mandatory)
+
+    >>> Setting: Enter the header for the column in the files containing the
+        dates that the meter readings were taken at. The same header must exist
+        in all files.
+
+            -For best results, use RFC2822 or ISO 8601 format for the
+             dates. Information on them can be found at:
+
+                http://tools.ietf.org/html/rfc2822#page-14
+                http://www.w3.org/TR/NOTE-datetime-970915.html
+
+
+    14: Date Column Header (Mandatory)
+
+    >>>	Setting: Enter the header for the column in the files containing the
+        meter reading values. The same header must exist in all files.
+
+
+    15: Work Order ID Column Header (Optional)
+ 
+    >>> Description: Use this setting to attach a work order ID to a meter
+        reading. Not every meter reading has to have a work order ID. If a meter
+        reading has a blank work order ID, it will be treated like a normal
+        meter reading. The same header must exist in all files for the program
+        to use this setting. (see example file "6data.csv”).
+
+    >>> Setting: Leave this setting blank to ignore it, or enter the heading for
+        the column containing Work Order IDs.
+
+
+    BATCHING SETUP
+    --------------
+    
+    16: Maximum Batch Requests per Minute (Mandatory)
+
+    >>>	Description: This setting controls the number of meter readings sent to
+        the server every minute.
+
+    >>> Setting: Leave this setting as 200.
+
+
+    17: Time Delay Between Files (Mandatory)
+
+    >>> Description: This setting controls the number of minutes the program
+        waits after finishing a file upload before it begins the next one.
+ 
+    >>> Setting: Leave this setting as 30.
+
+
+
+    RESET
+    -----
+
+    18: Reset the File and Position Tracking (Optional)
+
+    >>> Description: The Reset The File And Position Tracking setting is for
+        advanced usage. For more information, see the "README.md" file,
+        section 6.5.
+
+    >>> Setting: Leave this setting as 0.
+
+
+
+    Once finished configuring the config.txt file, save and close it. Make sure
+    it is saved as "config.txt" in the "config" folder.
+
+--------------------------------------------------------------------------------
+
+    The program is now ready to be run. Take the following steps to start
+    sending meter reading data to the CMMS. Make sure the CSV data files are
+    saved to the data folder (it was empty when you first downloaded it).
+
+--------------------------------------------------------------------------------
+
+Step 5:	Open the "Runnable.html" file with the Brackets software.
+
+    IMPORTANT:
+    Do not double click the "Runnable.html" file. It will not work outside of
+    the Brackets software.
+
+    You will need to run the program by either right clicking the
+    "Runnable.html" file, selecting "open with", and choosing the Brackets
+    software.
+    
+    It can also be done by opening the Brackets software, going to the "File"
+    menu, selecting "Open", and finding the "Runnable.html" file.
+
+--------------------------------------------------------------------------------
+
+Step 6: To start running the program and pushing the CSV data to your CMMS, 
+        Select the "Live Preview" setting in Brackets. This setting can be found
+        in the File menu.
+
+--------------------------------------------------------------------------------
+
+Step 7: Make sure the program is running properly.
+
+    The live preview function should open a new tab in your web browser. The new
+    tab will tell you the state of the program. If there are any issues with the
+    running of the program, see the "README.md" file, section 8, for
+    troubleshooting.
