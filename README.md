@@ -1,5 +1,5 @@
-MAINTENANCE ASSISTANT LABS AUTOMATED METER READING FILE HANDLER V.1.4
-=====================================================================
+MA Labs Automated Meter Reading File Handler V.1.4
+==================================================
 - - -
 <br>
 
