@@ -703,6 +703,7 @@ in use.
 * Corrected the fileList position to be identical to the actual position
 * Minor change in internal documentation
   * Corrected the stringFormat at-a-glance explanation
+* Began file hosting on GitHub
 
 
 ### v1.4 ###
