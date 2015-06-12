@@ -176,7 +176,7 @@ The Format setup has two requirements and three optional values:
 
 &nbsp;&nbsp;&nbsp;4:  Meter Reading Only                       - \[REQUIRED] \[TOGGLE]  
 &nbsp;&nbsp;&nbsp;5:  Delimiter                                - \[NOT REQUIRED]  
-&nbsp;&nbsp;&nbsp;6:  Quotation Wrapped Data                   - \[REQUIRED] \[TOGGLE]
+&nbsp;&nbsp;&nbsp;6:  Quotation Wrapped Data                   - \[REQUIRED] \[TOGGLE]  
 &nbsp;&nbsp;&nbsp;7:  Automatic Date Reading                   - \[REQUIRED] \[TOGGLE]  
 &nbsp;&nbsp;&nbsp;8:  Set Default ID                           - \[NOT REQUIRED]  
 &nbsp;&nbsp;&nbsp;9:  Set Default Unit                         - \[NOT REQUIRED]
