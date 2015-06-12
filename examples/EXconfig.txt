@@ -4,16 +4,16 @@ EXAMPLE CONFIGURATION FILE
 API SETUP
 ---------
 0: API URL
-~https://juskoski.macmms.com/api/
+~https://example.macmms.com/api/
 
 1: Application Key
-~macmmsackp3842b52b61a673f031e43b351f30dc81c846b1e6ba1675e67cf86c007
+~macmmsackpNumbersAndLettersNumbersAndLettersNumbersAndLetters
 
 2: Access Key
-~macmmsaakp38420642edc251bd048b7bb4ae810eb892f86cc7ad83853af34a9c9
+~macmmsackpNumbersAndLettersNumbersAndLettersNumbersAndLetters
 
 3: API Secret Key
-~macmmsaskp3843e022f840a03326b2c4ae6656c445138db26640e95858ebee3f3edca1a725bdd
+~macmmsackpNumbersAndLettersNumbersAndLettersNumbersAndLetters
 
 
 FORMAT SETUP

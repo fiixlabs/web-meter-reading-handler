@@ -149,7 +149,8 @@ function fetchConfig() {
                     case 10:
                         if(arrConfig[j] === '') {
                             blnFlag = true;
-                            document.getElementById("statusDetails").innerHTML += "STATUS DETAILS: Issue with configuration setting " + j + ". Empty.<br>";
+                            document.getElementById("statusDetails").innerHTML +=
+                                "STATUS DETAILS: Issue with configuration setting " + j + ". Empty.<br>";
                         }
                         break;
 
@@ -161,7 +162,8 @@ function fetchConfig() {
                     case 18:
                         if((parseInt(arrConfig[j]) !== 0) && (parseInt(arrConfig[j]) !== 1)) {
                             blnFlag = true;
-                            document.getElementById("statusDetails").innerHTML += "STATUS DETAILS: Issue with configuration setting " + j + ". Not a 0 or 1.<br>";
+                            document.getElementById("statusDetails").innerHTML +=
+                                "STATUS DETAILS: Issue with configuration setting " + j + ". Not a 0 or 1.<br>";
                         } else {
                             arrConfig[j] = (parseInt(arrConfig[j]) !== 0) ? true : false;
                         }
@@ -171,7 +173,8 @@ function fetchConfig() {
                     case 5:
                         if(arrConfig[j].search(/(\.|[0-9])/) !== -1) {
                             blnFlag = true;
-                            document.getElementById("statusDetails").innerHTML += "STATUS DETAILS: Issue with configuration setting " + j +
+                            document.getElementById("statusDetails").innerHTML +=
+                                "STATUS DETAILS: Issue with configuration setting " + j +
                                 ". Contains a \".\" or 0-9.<br>";
                         }
                         if(arrConfig[j] === '') {
@@ -183,10 +186,12 @@ function fetchConfig() {
                     case 7:
                         if((parseInt(arrConfig[j]) !== 0) && (parseInt(arrConfig[j]) !== 1)) {
                             blnFlag = true;
-                            document.getElementById("statusDetails").innerHTML += "STATUS DETAILS: Issue with configuration setting " + j + ". Not a 0 or 1.<br>";
+                            document.getElementById("statusDetails").innerHTML +=
+                                "STATUS DETAILS: Issue with configuration setting " + j + ". Not a 0 or 1.<br>";
                         } else if((parseInt(arrConfig[j]) === 0) && (parseInt(arrConfig[4]) === 1)) {
                             blnFlag = true;
-                            document.getElementById("statusDetails").innerHTML += "STATUS DETAILS: Issue with configuration setting " + j + ". Required on.<br>";
+                            document.getElementById("statusDetails").innerHTML +=
+                                "STATUS DETAILS: Issue with configuration setting " + j + ". Required on.<br>";
                         } else {
                             arrConfig[j] = (parseInt(arrConfig[j]) !== 0) ? true : false;
                         }
@@ -197,10 +202,12 @@ function fetchConfig() {
                         arrConfig[j] = arrConfig[j].replace(/(,|\s+)/g, '');
                         if((isNaN(parseInt(arrConfig[j])) === true) && (parseInt(arrConfig[4]) === 0) && (arrConfig[j] !== '')) {
                             blnFlag = true;
-                            document.getElementById("statusDetails").innerHTML += "STATUS DETAILS: Issue with configuration setting " + j + ". Not a number.<br>";
+                            document.getElementById("statusDetails").innerHTML +=
+                                "STATUS DETAILS: Issue with configuration setting " + j + ". Not a number.<br>";
                         } else if((isNaN(parseInt(arrConfig[j])) === true) && (parseInt(arrConfig[4]) === 1)) {
                             blnFlag = true;
-                            document.getElementById("statusDetails").innerHTML += "STATUS DETAILS: Issue with configuration setting " + j + ". Not a number or empty.<br>";
+                            document.getElementById("statusDetails").innerHTML +=
+                                "STATUS DETAILS: Issue with configuration setting " + j + ". Not a number or empty.<br>";
                         }
                         break;
 
@@ -208,7 +215,8 @@ function fetchConfig() {
                     case 9:
                         if((arrConfig[j] === '') && (parseInt(arrConfig[4]) === 1)) {
                             blnFlag = true;
-                            document.getElementById("statusDetails").innerHTML += "STATUS DETAILS: Issue with configuration setting " + j + ". Empty.<br>";
+                            document.getElementById("statusDetails").innerHTML +=
+                                "STATUS DETAILS: Issue with configuration setting " + j + ". Empty.<br>";
                         }
                         break;
 
@@ -216,7 +224,8 @@ function fetchConfig() {
                     case 11:
                         if((arrConfig[j] === '') && (arrConfig[4] === 0) && (arrConfig[6] === '')) {
                             blnFlag = true;
-                            document.getElementById("statusDetails").innerHTML += "STATUS DETAILS: Issue with configuration setting " + j + ". Empty.<br>";
+                            document.getElementById("statusDetails").innerHTML +=
+                                "STATUS DETAILS: Issue with configuration setting " + j + ". Empty.<br>";
                         }
                         break;
 
@@ -224,7 +233,8 @@ function fetchConfig() {
                     case 12:
                         if((arrConfig[j] === '') && (parseInt(arrConfig[4]) === 0)) {
                             blnFlag = true;
-                            document.getElementById("statusDetails").innerHTML += "STATUS DETAILS: Issue with configuration setting " + j + ". Empty.<br>";
+                            document.getElementById("statusDetails").innerHTML +=
+                                "STATUS DETAILS: Issue with configuration setting " + j + ". Empty.<br>";
                         }
                         break;
 
@@ -232,7 +242,8 @@ function fetchConfig() {
                     case 13:
                         if((arrConfig[j] === '') && (arrConfig[4] === 0) && (arrConfig[7] === '')) {
                             blnFlag = true;
-                            document.getElementById("statusDetails").innerHTML += "STATUS DETAILS: Issue with configuration setting " + j + ". Empty.<br>";
+                            document.getElementById("statusDetails").innerHTML +=
+                                "STATUS DETAILS: Issue with configuration setting " + j + ". Empty.<br>";
                         }
                         break;
 
@@ -240,7 +251,8 @@ function fetchConfig() {
                     case 14:
                         if((arrConfig[j] === '') && (arrConfig[4] === 0) && (arrConfig[5] === 0)) {
                             blnFlag = true;
-                            document.getElementById("statusDetails").innerHTML += "STATUS DETAILS: Issue with configuration setting " + j + ". Empty.<br>";
+                            document.getElementById("statusDetails").innerHTML +=
+                                "STATUS DETAILS: Issue with configuration setting " + j + ". Empty.<br>";
                         }
                         break;
 
@@ -250,7 +262,8 @@ function fetchConfig() {
                     case 16:
                         if(isNaN(parseInt(arrConfig[j])) === true) {
                             blnFlag = true;
-                            document.getElementById("statusDetails").innerHTML += "STATUS DETAILS: Issue with configuration setting " + j + ". Empty or not a number.<br>";
+                            document.getElementById("statusDetails").innerHTML +=
+                                "STATUS DETAILS: Issue with configuration setting " + j + ". Empty or not a number.<br>";
                         }
                         break;
 
@@ -258,10 +271,12 @@ function fetchConfig() {
                     case 17:
                         if(isNaN(parseInt(arrConfig[j])) === true) {
                             blnFlag = true;
-                            document.getElementById("statusDetails").innerHTML += "STATUS DETAILS: Issue with configuration setting " + j + ". Empty or not a number.<br>";
+                            document.getElementById("statusDetails").innerHTML +=
+                                "STATUS DETAILS: Issue with configuration setting " + j + ". Empty or not a number.<br>";
                         } else if(parseInt(arrConfig[j]) === 0) {
                             blnFlag = true;
-                            document.getElementById("statusDetails").innerHTML += "STATUS DETAILS: Issue with configuration setting " + j + ". Cannot enter \"0\".<br>";
+                            document.getElementById("statusDetails").innerHTML +=
+                                "STATUS DETAILS: Issue with configuration setting " + j + ". Cannot enter \"0\".<br>";
                         }
                         break;
                 }
@@ -274,7 +289,8 @@ function fetchConfig() {
         //Checks that there are exactly 13 pieces of readable data in the config.txt
         if(j !== 19) {
             blnFlag = true;
-            document.getElementById("statusDetails").innerHTML += "STATUS DETAILS: Issue with configuration settings. Either missing or has extra settings." +
+            document.getElementById("statusDetails").innerHTML +=
+                "STATUS DETAILS: Issue with configuration settings. Either missing or has extra settings." +
                 " Check lines beginning with \"~\".<br>";
         }
 
@@ -331,11 +347,13 @@ function fetchUnitDB(maCmmsClient) {
         "callback": function(ret) {
             if(!ret.error) {
                 //Reports a successful fetching of the unit data and returns the information
-                document.getElementById("status").innerHTML = "STATUS: Successfully fetched the unit information from the server.";
+                document.getElementById("status").innerHTML =
+                    "STATUS: Successfully fetched the unit information from the server.";
                 def.resolve(ret.objects);
             } else {
                 //Outputs a failure to the user and returns a failure to break out of the current iteration of the runnable loop
-                document.getElementById("status").innerHTML = "STATUS: Attempt to fetch the unit information from the server was unsuccessful.";
+                document.getElementById("status").innerHTML =
+                    "STATUS: Attempt to fetch the unit information from the server was unsuccessful.";
                 def.resolve(false);
             }
         }
@@ -399,7 +417,8 @@ function fetchFileDB(objUnitDB, objConfig) {
                 ((posUnit === undefined) && (objConfig.FmtDUt === '')) ||
                 ((posDate === undefined) && (objConfig.FmtADR === false))
             ){
-                    document.getElementById("statusDetails").innerHTML = "STATUS DETAILS: File did not contain one or more of the required headings:<br><ul>";
+                    document.getElementById("statusDetails").innerHTML =
+                        "STATUS DETAILS: File did not contain one or more of the required headings:<br><ul>";
                 if((posID === undefined) && (objConfig.FmtDID === false)) {
                     document.getElementById("statusDetails").innerHTML += "<li>" + objConfig.FleAID + "</li>";
                 }
@@ -415,10 +434,12 @@ function fetchFileDB(objUnitDB, objConfig) {
                 if((posWorkID === undefined) && (objConfig.FleWID !== '')) {
                     document.getElementById("statusDetails").innerHTML += "<li>" + objConfig.FleWID + "</li>";
                 }
-                document.getElementById("statusDetails").innerHTML += "<br></ul>STATUS DETAILS: Please either fix the file headings, or change the configuration files.";
-                document.getElementById("statusDetails").innerHTML += "<br>STATUS DETAILS: Changing the configuration files will require restarting the program after.";
+                document.getElementById("statusDetails").innerHTML +=
+                    "<br></ul>STATUS DETAILS: Please either fix the file headings, or change the configuration files." +
+                    "<br>STATUS DETAILS: Changing the configuration files will require restarting the program after.";
 
-                //Jumps out of the function before formatting and skips the batch recursion, reaching the cycleEnd function to wait for the next runnable loop iteration
+                //Jumps out of the function before formatting and skips the batch recursion,
+                //reaching the cycleEnd function to wait for the next runnable loop iteration
                 def.resolve(false);
                 return def.promise();
             }
@@ -460,8 +481,8 @@ function fetchFileDB(objUnitDB, objConfig) {
                 //Check the line to make sure it's a meter reading
                 if((isNaN(data[i]) === true) || (isNaN(parseFloat(data[i])) === true)) {
                     blnFlag = true;
-                    document.getElementById("statusDetails").innerHTML += "STATUS DETAILS: Error with item " + (i + 1) + " - \"" + data[i] +
-                        "\" is not a number, or empty<br>";
+                    document.getElementById("statusDetails").innerHTML +=
+                        "STATUS DETAILS: Error with item " + (i + 1) + " - \"" + data[i] + "\" is not a number, or empty<br>";
                 }
 
                 //Set up the object
@@ -474,11 +495,13 @@ function fetchFileDB(objUnitDB, objConfig) {
         }
 
         if(blnFlag === true) {
-            document.getElementById("statusDetails").innerHTML +="STATUS DETAILS: File " + (fetchStorage("fileName") + 1) + objConfig.FNames + " will be reattempted in "
-                + objConfig.FDelay + " minutes<br>" + "STATUS DETAILS: Please fix the file data before the next file read attempt";
+            document.getElementById("statusDetails").innerHTML +=
+                "STATUS DETAILS: File " + (fetchStorage("fileName") + 1) + objConfig.FNames + " will be reattempted in " +
+                objConfig.FDelay + " minutes<br>" + "STATUS DETAILS: Please fix the file data before the next file read attempt";
             document.getElementById("statusDetails").innerHTML += "<br>Splitter setting: " + objConfig.FmtDlr;
 
-            //Jumps out of the function before formatting and skips the batch recursion, reaching the cycleEnd function to wait for the next runnable loop iteration
+            //Jumps out of the function before formatting and skips the batch recursion,
+            //reaching the cycleEnd function to wait for the next runnable loop iteration
             def.resolve(false);
             return def.promise();
         }
@@ -495,7 +518,8 @@ function fetchFileDB(objUnitDB, objConfig) {
             //Resets the flag for the next item
             blnFlag = false;
 
-            //Checks the current item against all unit data to find a match, and replaces the string with an ID integer if a match is found
+            //Checks the current item against all unit data to find a match,
+            //and replaces the string with an ID integer if a match is found
             for(var j = 0; j < intDBLength; j += 1) {
                 if(objFormatted[i].intMeterReadingUnitsID.toUpperCase() === objUnitDB[j].strName.toUpperCase()) {
                     objFormatted[i].intMeterReadingUnitsID = objUnitDB[j].id;
@@ -507,12 +531,16 @@ function fetchFileDB(objUnitDB, objConfig) {
 
             //Checks if the current item being formatted did not have a match with the server's unit data
             if(blnFlag === false) {
-                document.getElementById("statusDetails").innerHTML = "STATUS DETAILS: Error with row " + (i + 2) + "'s unit data - \"" + objFormatted[i].intMeterReadingUnitsID +
+                document.getElementById("statusDetails").innerHTML =
+                    "STATUS DETAILS: Error with row " + (i + 2) + "'s unit data - \"" + objFormatted[i].intMeterReadingUnitsID +
                     "\" is not registered in the database<br>" +
-                    "STATUS DETAILS: File " + (fetchStorage("fileName") + 1) + objConfig.FNames + " will be reattempted in " + objConfig.FDelay + " minutes.<br>" +
-                    "STATUS DETAILS: Please either fix the file data or add the missing unit to the CMMS before the next file read attempt.";
+                    "STATUS DETAILS: File " + (fetchStorage("fileName") + 1) + objConfig.FNames +
+                    " will be reattempted in " + objConfig.FDelay + " minutes.<br>" +
+                    "STATUS DETAILS: Please either fix the file data or add the missing unit to " +
+                    "the CMMS before the next file read attempt.";
                 
-                //Ends the function and 0 to force the program to skip the pushBatch recursion and skips to the beginning of the next runnable loop iteration
+                //Ends the function and 0 to force the program to skip the pushBatch
+                //recursion and skips to the beginning of the next runnable loop iteration
                 def.resolve(false);
                 return def.promise();
             }
@@ -522,8 +550,8 @@ function fetchFileDB(objUnitDB, objConfig) {
 
     }).fail(function() {
         //For a failed $.get, there was an issue or the file didn't exist
-        document.getElementById("statusDetails").innerHTML = "STATUS DETAILS: File " + (fetchStorage("fileName") + 1) + objConfig.FNames +
-            " was unsuccessfully fetched or does not exist";
+        document.getElementById("statusDetails").innerHTML = "STATUS DETAILS: File " +
+            (fetchStorage("fileName") + 1) + objConfig.FNames + " was unsuccessfully fetched or does not exist";
         def.resolve(false);
     });
 
@@ -603,7 +631,8 @@ function prepBatch(maCmmsClient, objFormatted, objConfig) {
         intCount += objConfig.MaxBtc;
 
         //Outputs for the user
-        document.getElementById("batchPrep").innerHTML = "Batches: " + (j + 1) + "/" + (Math.ceil(intLength/objConfig.MaxBtc)) + " prepared";
+        document.getElementById("batchPrep").innerHTML =
+            "Batches: " + (j + 1) + "/" + (Math.ceil(intLength/objConfig.MaxBtc)) + " prepared";
     }
 
     return arrPushDB;
@@ -638,7 +667,9 @@ function pushBatch(maCmmsClient, objConfig, arrToPush, j, intError) {
                     //Calls the pushBatch function after a minute delay for the next iteration of the recursion
                     document.getElementById("delay").innerHTML = "Time of next batch request: " + formatTime(61);
                     document.getElementById("delay").innerHTML += "<br>The program can be safely exited currently.";
-                    setTimeout(function(){pushBatch(maCmmsClient, objConfig, arrToPush, j, 0);}, 61*1000);   //Delay a minute before recursion, clearing the error count
+
+                    //Delay a minute before recursion, clearing the error count
+                    setTimeout(function(){pushBatch(maCmmsClient, objConfig, arrToPush, j, 0);}, 61*1000);
                 } else {
                     //Stops calling the pushBatch recursion
                     //Increments the value of which file is to be read & resets the position in the file for the next one
@@ -658,17 +689,22 @@ function pushBatch(maCmmsClient, objConfig, arrToPush, j, intError) {
                 //Outputs for the user
                 document.getElementById("status").innerHTML = "STATUS: Sending batch requests.";
                 document.getElementById("batch").innerHTML = "Batches completed: " + j + "/" + intLength;
-                document.getElementById("batchStatus").innerHTML = "Batch " + (j + 1) + " unsuccessful. " + (10 - intError) + " attempts left";
+                document.getElementById("batchStatus").innerHTML =
+                    "Batch " + (j + 1) + " unsuccessful. " + (10 - intError) + " attempts left";
 
                 //Checks if the current batch has no remaining errors
                 if(intError !== 10) {
                     //Continues attempting, going back into recursion on the same batch
                     document.getElementById("delay").innerHTML = "Time of next batch request:" + formatTime(61);
                     document.getElementById("delay").innerHTML += "<br>The program can be safely exited currently.";
-                    setTimeout(function(){pushBatch(maCmmsClient, objConfig, arrToPush, j, intError);}, 61*1000); //Reattempt the batch after a minute
+
+                    //Reattempt the batch after a minute
+                    setTimeout(function(){pushBatch(maCmmsClient, objConfig, arrToPush, j, intError);}, 61*1000);
                 } else {
-                    //Stops calling the pushBatch recursion, exiting out of the batch recursion and returning to the runnable recursion
-                    document.getElementById("batchFinal").innerHTML = "File " + fetchStorage("fileList") + objConfig.FNames + " was not completed";
+                    //Stops calling the pushBatch recursion,
+                    //exiting out of the batch recursion and returning to the runnable recursion
+                    document.getElementById("batchFinal").innerHTML =
+                        "File " + fetchStorage("fileList") + objConfig.FNames + " was not completed";
                     endCycle(maCmmsClient, objConfig);
                 }
             }
@@ -722,8 +758,10 @@ function program() {
                 } else {
                     //Outputs failure for user
                     document.getElementById("status").innerHTML = "STATUS: Unable to proceed. CMMS could not be called.";
-                    document.getElementById("statusDetails").innerHTML = "STATUS DETAILS: Either unable to connect to the internet or the API is not properly set up.";
-                    document.getElementById("statusDetails").innerHTML = "API Setup requirements in config.txt may be improperly set up.";
+                    document.getElementById("statusDetails").innerHTML =
+                        "STATUS DETAILS: Either unable to connect to the internet or the API is not properly set up.";
+                    document.getElementById("statusDetails").innerHTML =
+                        "API Setup requirements in config.txt may be improperly set up.";
                 }
             }).fail(function() {
                 //In case of a failed promise
@@ -780,7 +818,8 @@ function runnable(maCmmsClient, objConfig) {
                 }
             }).fail(function() {
                 //In case of a failed promise
-                document.getElementById("status").innerHTML = "STATUS: Failed to find the CSV file " + (localStorage.getItem("fileList") + 1) + objConfig.FNames + ".";
+                document.getElementById("status").innerHTML =
+                    "STATUS: Failed to find the CSV file " + (localStorage.getItem("fileList") + 1) + objConfig.FNames + ".";
                 endCycle(maCmmsClient, objConfig);
             });
         } else {
@@ -788,7 +827,8 @@ function runnable(maCmmsClient, objConfig) {
         }
     }).fail(function() {
         //In case of a failed promise
-        document.getElementById("status").innerHTML = "STATUS: Attempt to fetch the unit information from the server was unsuccessful.";
+        document.getElementById("status").innerHTML =
+            "STATUS: Attempt to fetch the unit information from the server was unsuccessful.";
         endCycle(maCmmsClient, objConfig);
     });
 }////////////////////////////////
