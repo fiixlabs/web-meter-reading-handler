@@ -156,10 +156,10 @@ For example files using the various optional unrequired settings, see section
 
 The API setup has four requirements:
 
-&nbsp;&nbsp;&nbsp;0:  API URL                                   - \[REQUIRED]  
-&nbsp;&nbsp;&nbsp;1:  Application Key                           - \[REQUIRED]  
-&nbsp;&nbsp;&nbsp;2:  Access Key                                - \[REQUIRED]  
-&nbsp;&nbsp;&nbsp;3:  API Secret Key                            - \[REQUIRED]
+&nbsp;&nbsp;&nbsp;0:  API URL                                             - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;1:  Application Key                                     - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;2:  Access Key                                          - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;3:  API Secret Key                                      - \[REQUIRED]
 
 To learn about getting your API keys, go to the web page:
 
@@ -174,12 +174,12 @@ and see the section "Getting your API Access Keys".
 
 The Format setup has two requirements and three optional values:
 
-&nbsp;&nbsp;&nbsp;4:  Meter Reading Only                       - \[REQUIRED] \[TOGGLE]  
-&nbsp;&nbsp;&nbsp;5:  Delimiter                                - \[NOT REQUIRED]  
-&nbsp;&nbsp;&nbsp;6:  Quotation Wrapped Data                   - \[REQUIRED] \[TOGGLE]  
-&nbsp;&nbsp;&nbsp;7:  Automatic Date Reading                   - \[REQUIRED] \[TOGGLE]  
-&nbsp;&nbsp;&nbsp;8:  Set Default ID                           - \[NOT REQUIRED]  
-&nbsp;&nbsp;&nbsp;9:  Set Default Unit                         - \[NOT REQUIRED]
+&nbsp;&nbsp;&nbsp;4:  Meter Reading Only                                 - \[REQUIRED] \[TOGGLE]  
+&nbsp;&nbsp;&nbsp;5:  Delimiter                                          - \[NOT REQUIRED]  
+&nbsp;&nbsp;&nbsp;6:  Quotation Wrapped Data                             - \[REQUIRED] \[TOGGLE]  
+&nbsp;&nbsp;&nbsp;7:  Automatic Date Reading                             - \[REQUIRED] \[TOGGLE]  
+&nbsp;&nbsp;&nbsp;8:  Set Default ID                                     - \[NOT REQUIRED]  
+&nbsp;&nbsp;&nbsp;9:  Set Default Unit                                   - \[NOT REQUIRED]
 
 
 #### 4:  Meter Reading Only ####
@@ -199,8 +199,8 @@ setting.
 An example would be using the vertical bar ("|") or ampersand ("&") instead of
 the comma as the delimiter for the CSV files.
 
-&nbsp;&nbsp;&nbsp;id,Meter Reading,Unit,Date
-&nbsp;&nbsp;&nbsp;id|Meter Reading|Unit|Date
+&nbsp;&nbsp;&nbsp;id,Meter Reading,Unit,Date  
+&nbsp;&nbsp;&nbsp;id|Meter Reading|Unit|Date  
 &nbsp;&nbsp;&nbsp;id&Meter Reading&Unit&Date
 
 **NOTE:**  
@@ -262,12 +262,12 @@ to each meter reading, regardless of any units in the file.
 
 The file setup has five requirements and an optional value:
 
-&nbsp;&nbsp;&nbsp;10: File Name                                - \[REQUIRED]  
-&nbsp;&nbsp;&nbsp;11: Asset ID Column Header                   - \[REQUIRED]  
-&nbsp;&nbsp;&nbsp;12: Meter Reading Value Column Header        - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;10: File Name                                          - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;11: Asset ID Column Header                             - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;12: Meter Reading Value Column Header                  - \[REQUIRED]  
 &nbsp;&nbsp;&nbsp;13: Meter Reading Value Unit Measurement Column Header - \[REQUIRED]  
-&nbsp;&nbsp;&nbsp;14: Date Column Header                       - \[REQUIRED]  
-&nbsp;&nbsp;&nbsp;15: Work Order ID Column Header              - \[NOT REQUIRED]
+&nbsp;&nbsp;&nbsp;14: Date Column Header                                 - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;15: Work Order ID Column Header                        - \[NOT REQUIRED]
 
 
 #### 10: File Name ####
@@ -370,8 +370,8 @@ headers in the files, and only one column or string of data for meter readings.
 
 The batch setup has two requirements:
 
-&nbsp;&nbsp;&nbsp;16: Maximum Batch Requests Per Minute        - \[REQUIRED]  
-&nbsp;&nbsp;&nbsp;17: Time Delay Between Files                 - \[REQUIRED]
+&nbsp;&nbsp;&nbsp;16: Maximum Batch Requests Per Minute                  - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;17: Time Delay Between Files                           - \[REQUIRED]
 
 
 #### 16: Maximum Batch Requests Per Minute ####
@@ -401,7 +401,7 @@ The value is in minutes, and the default setting is half an hour.
 
 The reset setup has one requirement:
 
-&nbsp;&nbsp;&nbsp;18: Reset The File And Position Tracking     - \[REQUIRED] \[TOGGLE]
+&nbsp;&nbsp;&nbsp;18: Reset The File And Position Tracking               - \[REQUIRED] \[TOGGLE]
 
 The reset option, which is either 0 or 1, is meant for resetting the position of
 the program's tracking. The program automatically saves how many files it has
