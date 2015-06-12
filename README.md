@@ -7,40 +7,39 @@ MA Labs Automated Meter Reading File Handler V.1.4
 TABLE OF CONTENTS
 -----------------
 
-1. Authors & Contributors  
-2. Introduction  
-3. Requirements  
-4. Installation  
-5. Setup  
-6. Configuration  
-   6.1 API Setup  
-   6.2 Format Setup  
-   6.3 File Setup  
-   6.4 Batch Setup  
-   6.5 Reset  
-7. Running  
-8. Troubleshooting  
-   8.1 API Connecting  
-   8.2 Adding Units  
-9. Licensing  
-10. Alternative  
-   10.1 SimpleHTTPServer  
-11. Examples  
-   11.1 1data.csv  
-   11.2 2data.csv  
-   11.3 3data.csv  
-   11.4 4data.csv  
-   11.5 5data.csv  
-   11.6 6data.csv  
-   11.7 7data.csv  
-   11.8 8data.csv  
-12. Changelog  
+1. [Authors & Contributors](#01.00.00)  
+2. [Introduction](#02.00.00)  
+3. [Requirements](#03.00.00)  
+4. [Installation](#04.00.00)  
+5. [Setup](#05.00.00)  
+6. [Configuration](#06.00.00)  
+   [6.1 API Setup](#06.01.00)  
+   [6.2 Format Setup](#06.02.00)  
+   [6.3 File Setup](#06.03.00)  
+   [6.4 Batch Setup](#06.04.00)  
+   [6.5 Reset](#06.05.00)  
+7. [Running](#07.00.00)  
+8. [Troubleshooting](#08.00.00)  
+   [8.1 API Connecting](#08.01.00)  
+   [8.2 Adding Units](#08.02.00)  
+9. [Licensing](#09.00.00)  
+10. [Alternative](#10.00.00)  
+   [10.1 SimpleHTTPServer](#10.01.00)  
+11. [Examples](#11.00.00)  
+   [11.1 1data.csv](#11.01.00)  
+   [11.2 2data.csv](#11.02.00)  
+   [11.3 3data.csv](#11.03.00)  
+   [11.4 4data.csv](#11.04.00)  
+   [11.5 5data.csv](#11.05.00)  
+   [11.6 6data.csv](#11.06.00)  
+   [11.7 7data.csv](#11.07.00)  
+   [11.8 8data.csv](#11.08.00)  
+12. [Changelog](#12.00.00)  
 
 <br>
 
-
-1  AUTHORS & CONTRIBUTORS
--------------------------
+1  AUTHORS &amp; CONTRIBUTORS                            <a id="01.00.00"></a>
+-----------------------------
 
 v1.0.0 Created May 5,   2015 by Jake Uskoski  
 v1.1.0 Created May 8,   2015 by Jake Uskoski  
@@ -52,7 +51,7 @@ v1.4.1 Created June 11, 2015 by Jake Uskoski
 <br>
 
 
-2  INTRODUCTION
+2  INTRODUCTION                                          <a id="02.00.00"></a>
 ---------------
 
 The Automated Meter Reading File Handler is a program which takes CSV files from
@@ -74,7 +73,7 @@ For a simple step-by-step guide to setting up this program, see the file named
 <br>
 
 
-3  REQUIREMENTS
+3  REQUIREMENTS                                          <a id="03.00.00"></a>
 ---------------
 
 1. A modern web browser, preferably Google Chrome
@@ -88,7 +87,7 @@ For a simple step-by-step guide to setting up this program, see the file named
 <br>
 
 
-4  INSTALLATION
+4  INSTALLATION                                          <a id="04.00.00"></a>
 ---------------
 
 The Automated Meter Reading File Handler program requires no installation, but
@@ -104,7 +103,7 @@ this README, see the "ALTERNATIVE" section.
 <br>
 
 
-5  SETUP
+5  SETUP                                                 <a id="05.00.00"></a>
 --------
 
 Within the program folder where the runnable.html file is located, there is a
@@ -129,7 +128,7 @@ else the program will fail to function. See "CONFIGURATION" for more details.
 <br>
 
 
-6  CONFIGURATION
+6  CONFIGURATION                                         <a id="06.00.00"></a>
 ----------------
 
 The configuration file, located in the "config" folder and named "config.txt",
@@ -152,7 +151,7 @@ For example files using the various optional unrequired settings, see section
 11.
 
 
-### 6.1  API SETUP ###
+### 6.1  API SETUP ###                                   <a id="06.01.00"></a>
 
 The API setup has four requirements:
 
@@ -170,38 +169,38 @@ and see the section "Getting your API Access Keys".
 [doc]: http://www.maintenanceassistant.com/api/docs/guide.html
 
 
-### 6.2  FORMAT SETUP ###
+### 6.2  FORMAT SETUP ###                                <a id="06.02.00"></a>
 
 The Format setup has two requirements and three optional values:
 
-&nbsp;&nbsp;&nbsp;4:  Meter Reading Only                                 - \[REQUIRED] \[TOGGLE]  
-&nbsp;&nbsp;&nbsp;5:  Delimiter                                          - \[NOT REQUIRED]  
-&nbsp;&nbsp;&nbsp;6:  Quotation Wrapped Data                             - \[REQUIRED] \[TOGGLE]  
-&nbsp;&nbsp;&nbsp;7:  Automatic Date Reading                             - \[REQUIRED] \[TOGGLE]  
-&nbsp;&nbsp;&nbsp;8:  Set Default ID                                     - \[NOT REQUIRED]  
-&nbsp;&nbsp;&nbsp;9:  Set Default Unit                                   - \[NOT REQUIRED]
+&nbsp;&nbsp;&nbsp;4:  [Meter Reading Only](#06.02.04)                                 - \[REQUIRED] \[TOGGLE]  
+&nbsp;&nbsp;&nbsp;5:  [Delimiter](#06.02.05)                                          - \[NOT REQUIRED]  
+&nbsp;&nbsp;&nbsp;6:  [Quotation Wrapped Data](#06.02.06)                             - \[REQUIRED] \[TOGGLE]  
+&nbsp;&nbsp;&nbsp;7:  [Automatic Date Reading](#06.02.07)                             - \[REQUIRED] \[TOGGLE]  
+&nbsp;&nbsp;&nbsp;8:  [Set Default ID](#06.02.08)                                     - \[NOT REQUIRED]  
+&nbsp;&nbsp;&nbsp;9:  [Set Default Unit](#06.02.09)                                   - \[NOT REQUIRED]
 
 
-#### 4:  Meter Reading Only ####
+#### 4:  Meter Reading Only ####                         <a id="06.02.04"></a>
 
 This setting is for cases where the files being placed in the "data" folder only
 contain a single column (or single string) of meter reading data, and nothing
 else.
 
 
-#### 5:  Delimiter ####
+#### 5:  Delimiter ####                                  <a id="06.02.05"></a>
 
 The Delimiter setting, when left blank, defaults to using the comma (","), the
 basic delimiter of CSV files. If the CSV files being placed in the "data" folder
 have a different delimiter than the comma, then it may be entered into this
 setting.
 
-An example would be using the vertical bar ("|") or ampersand ("&") instead of
+An example would be using the vertical bar ("|") or ampersand ("&amp;") instead of
 the comma as the delimiter for the CSV files.
 
 &nbsp;&nbsp;&nbsp;id,Meter Reading,Unit,Date  
 &nbsp;&nbsp;&nbsp;id|Meter Reading|Unit|Date  
-&nbsp;&nbsp;&nbsp;id&Meter Reading&Unit&Date
+&nbsp;&nbsp;&nbsp;id&amp;Meter Reading&amp;Unit&amp;Date
 
 **NOTE:**  
 The delimiter can be any length, not just one character, but it must remain
@@ -211,7 +210,7 @@ properly, leading to improper amounts of batches and continuously failing
 attempts to send data to the CMMS.
 
 
-#### 6:  Quotation Wrapped Data ####
+#### 6:  Quotation Wrapped Data ####                     <a id="06.02.06"></a>
 
 The Quotation Wrapped Data setting is for if the program used to generate CSV
 files wraps all data in quotations. This is common for CSV files, and allows for
@@ -229,7 +228,7 @@ would be separated into "id", "Meter", " Reading", "Meter", " Unit", "Date"
 &nbsp;&nbsp;&nbsp;id,Meter, Reading,Meter, Unit,Date
 
 
-#### 7:  Automatic Date Reading ####
+#### 7:  Automatic Date Reading ####                     <a id="06.02.07"></a>
 
 The Automatic Date Reading setting causes the program to override the Date
 Column Header setting (13) in the File Setup section, instead using the time
@@ -239,7 +238,7 @@ required to be on as well, but the Automatic Date Reading setting can also be
 toggled on without the Meter Reading Only setting.
 
 
-#### 8:  Set Default ID ####
+#### 8:  Set Default ID ####                             <a id="06.02.08"></a>
 
 Similar to the Automatic Date Reading setting (6), the Set Default ID
 setting will override the Asset ID Column Header setting (10) and attach
@@ -250,7 +249,7 @@ Like the Automatic Date Reading setting (6), the Set Default ID setting is
 required when the Meter Reading Only setting (4) is toggled on.
 
 
-#### 9:  Set Default Unit ####
+#### 9:  Set Default Unit ####                           <a id="06.02.09"></a>
 
 Similar to the Set Default ID setting (7), the Set Default Unit setting will
 override the Meter Reading Value Unit Measurement Column Header setting (12)
@@ -258,26 +257,26 @@ and attach whatever unit that has been entered in the Set Default Unit setting
 to each meter reading, regardless of any units in the file.
 
 
-### 6.3  FILE SETUP ###
+### 6.3  FILE SETUP ###                                  <a id="06.03.00"></a>
 
 The file setup has five requirements and an optional value:
 
-&nbsp;&nbsp;&nbsp;10: File Name                                          - \[REQUIRED]  
-&nbsp;&nbsp;&nbsp;11: Asset ID Column Header                             - \[REQUIRED]  
-&nbsp;&nbsp;&nbsp;12: Meter Reading Value Column Header                  - \[REQUIRED]  
-&nbsp;&nbsp;&nbsp;13: Meter Reading Value Unit Measurement Column Header - \[REQUIRED]  
-&nbsp;&nbsp;&nbsp;14: Date Column Header                                 - \[REQUIRED]  
-&nbsp;&nbsp;&nbsp;15: Work Order ID Column Header                        - \[NOT REQUIRED]
+&nbsp;&nbsp;&nbsp;10: [File Name](#06.03.10)                                          - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;11: [Asset ID Column Header](#06.03.11)                             - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;12: [Meter Reading Value Column Header](#06.03.12)                  - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;13: [Meter Reading Value Unit Measurement Column Header](#06.03.13) - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;14: [Date Column Header](#06.03.14)                                 - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;15: [Work Order ID Column Header](#06.03.15)                        - \[NOT REQUIRED]
 
 
-#### 10: File Name ####
+#### 10: File Name ####                                  <a id="06.03.10"></a>
 
 File Name refers to the names given to all of the
 files in the "data" folder. The name must include the ".csv" and cannot include
 any numbers. Leaving the File Name empty ("~") results in a fatal error.
 
 
-#### 11: Asset ID Column Header ####
+#### 11: Asset ID Column Header ####                     <a id="06.03.11"></a>
 
 The Asset ID Column Header setting is for the header which appears in all files,
 for the column containing the data for the Asset IDs related to the meter
@@ -306,7 +305,7 @@ one column or string of data for meter readings, or the assumption that the
 configured default is the correct value.
 
 
-#### 12: Meter Reading Value Column Header ####
+#### 12: Meter Reading Value Column Header ####          <a id="06.03.12"></a>
 
 Similar to the Asset ID Column Header setting (10), the Meter Reading Value
 Column Header setting is for the header which appears in all files, for the
@@ -319,7 +318,7 @@ no headers in the files, and only one column or string of data for meter
 readings.
 
 
-#### 13: Meter Reading Value Unit Measurement Column Header ####
+#### 13: Meter Reading Value Unit Measurement Column Header ####<a id="06.03.13"></a>
 
 Similar to the Asset ID Column Header setting (10), the Meter Reading Value
 Unit Measurement Column Header setting is for the header which appears in all
@@ -333,7 +332,7 @@ headers in the files, and only one column or string of data for meter readings,
 or the assumption that the configured default is the correct value.
 
 
-#### 14: Date Column Header ####
+#### 14: Date Column Header ####                         <a id="06.03.14"></a>
 
 Similar to the Asset ID Column Header setting (10), the Date Column Header
 setting is for the header which appears in all files, for the column containing
@@ -356,7 +355,7 @@ configured default is the correct value.
 [ISO]: http://www.w3.org/TR/NOTE-datetime-970915.html  
 
 
-#### 15: Work Order ID Column Header ####
+#### 15: Work Order ID Column Header ####                <a id="06.03.15"></a>
 
 Similar to the Asset ID Column Header setting (10), the Work Order ID Column
 Header setting
@@ -366,15 +365,15 @@ Column Header setting will be ignored, under the assumption that there are no
 headers in the files, and only one column or string of data for meter readings.
 
 
-### 6.4  BATCH SETUP ###
+### 6.4  BATCH SETUP ###                                 <a id="06.04.00"></a>
 
 The batch setup has two requirements:
 
-&nbsp;&nbsp;&nbsp;16: Maximum Batch Requests Per Minute                  - \[REQUIRED]  
-&nbsp;&nbsp;&nbsp;17: Time Delay Between Files                           - \[REQUIRED]
+&nbsp;&nbsp;&nbsp;16: [Maximum Batch Requests Per Minute](#06.04.16)                  - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;17: [Time Delay Between Files](#06.04.17)                           - \[REQUIRED]
 
 
-#### 16: Maximum Batch Requests Per Minute ####
+#### 16: Maximum Batch Requests Per Minute ####          <a id="06.04.16"></a>
 
 The maximum batch requests per minute value
 keeps the server from throttling the program, and varies depending on the size
@@ -387,7 +386,7 @@ Due to the nature of the program, all two hundred will be sent at once, and then
 a minute delay will begin after the server responds, to prevent throttling.
 
 
-#### 17: Time Delay Between Files ####
+#### 17: Time Delay Between Files ####                   <a id="06.04.17"></a>
 
 The time delay between files is meant to force the program to wait before moving
 to the next file, or continuing the current file if closed or failed before
@@ -397,7 +396,8 @@ for the program to read, before the next check. It also gives time for any
 internet instability to resolve before re attempting to send files to the CMMS.
 The value is in minutes, and the default setting is half an hour.
 
-### 6.5  RESET ###
+
+### 6.5  RESET ###                                       <a id="06.05.00"></a>
 
 The reset setup has one requirement:
 
@@ -420,7 +420,7 @@ are being placed in the "data" folder.
 <br>
 
 
-7  RUNNING
+7  RUNNING                                               <a id="07.00.00"></a>
 ----------
 
 Once the configuration file is prepared, open the file "Runnable.html" using the
@@ -432,7 +432,7 @@ meter reading data from the CSV files to the CMMS.
 <br>
 
 
-8  TROUBLESHOOTING
+8  TROUBLESHOOTING                                       <a id="08.00.00"></a>
 ------------------
 
 Most errors are reported to the user through the use of "STATUS: &#60;message\>". Any
@@ -494,7 +494,7 @@ The following are any of the possible documented errors:
 Any other errors which occur without a status message are unknown.
 
 
-### 8.1  API CONNECTING ###
+### 8.1  API CONNECTING ###                              <a id="08.01.00"></a>
 
 From a desktop view of the CMMS:
 
@@ -510,7 +510,7 @@ From a desktop view of the CMMS:
 7. Click save at the top of the screen.
 
 
-### 8.2  ADDING UNITS ###
+### 8.2  ADDING UNITS ###                                <a id="08.02.00"></a>
   
 From a desktop view of the CMMS:
 
@@ -529,7 +529,7 @@ From a desktop view of the CMMS:
 <br>
 
 
-9  LICENSING
+9  LICENSING                                             <a id="09.00.00"></a>
 ------------
 
 Maintenance Assistant Labs Automated Meter Reading File Handler uses the bundled
@@ -565,7 +565,7 @@ web page:
 <br>
 
 
-10 ALTERNATIVE
+10 ALTERNATIVE                                           <a id="10.00.00"></a>
 --------------
 
 Running the program without Brackets requires generating a server. A simple
@@ -573,7 +573,7 @@ solution is to generate a simple server to run localhost. Below is an example
 solution using Python's SimpleHTTPServer module.
 
 
-### 10.1 SIMPLEHTTPSERVER ###
+### 10.1 SIMPLEHTTPSERVER ###                            <a id="10.01.00"></a>
 
 SimpleHTTPServer is a part of Python, and thus can be called easily from such.
 This example uses Python 2.7.9, which can be downloaded from the following link:
@@ -615,7 +615,7 @@ For more information, visit the web page:
 <br>
 
 
-11 EXAMPLES
+11 EXAMPLES                                              <a id="11.00.00"></a>
 -----------
 
 All examples for the program are located in the "examples" folder. The example
@@ -632,73 +632,89 @@ in a spreadsheet application, such as Microsoft Excel, can result in unexpected
 issues with the viewing of the data and formatting of the examples.
 
 
-### 11.1 1data.csv ###
+### 11.1 1data.csv ###                                   <a id="11.01.00"></a>
 
-The "1data.csv" file is a basic CSV file of meter readings. It only contains the
+The ["1data.csv"][ex1] file is a basic CSV file of meter readings. It only contains the
 needed headers for the program to run with a generic configuration. If the file
 had more columns with various headers, it wouldn't make a difference, since all
 the program needs are the four columns shown in the "1data.csv" file.
 
 The header names are configurable (see section 6.3).
 
+[ex1]: examples/EXdata/1data.csv
 
-### 11.2 2data.csv ###
 
-The "2data.csv" file is an example file using the optional toggle setting "4:
+### 11.2 2data.csv ###                                   <a id="11.02.00"></a>
+
+The ["2data.csv"][ex2] file is an example file using the optional toggle setting "4:
 Meter Reading Only" (see section 6.2). It is assumed for this file that setting
 4 is turned on, and settings 7, 8, and 9 are in use.
 
+[ex2]: examples/EXdata/2data.csv
 
-### 11.3 3data.csv ###
 
-The "3data.csv" file is an example file using the optional setting "5:
+### 11.3 3data.csv ###                                   <a id="11.03.00"></a>
+
+The ["3data.csv"][ex3] file is an example file using the optional setting "5:
 Delimiter" (see section 6.2). It is assumed for this file that setting 5 has
 been set to "^", and no other optional settings are in use.
 
+[ex3]: examples/EXdata/3data.csv
 
-### 11.4 4data.csv ###
 
-The "4data.csv" file is an example file using the optional toggle setting "6:
+### 11.4 4data.csv ###                                   <a id="11.04.00"></a>
+
+The ["4data.csv"][ex4] file is an example file using the optional toggle setting "6:
 Quotation Wrapped Data" (see section 6.2). It is assumed for this file that
 setting 6 is turned on, and no other optional settings are in use.
 
+[ex4]: examples/EXdata/4data.csv
 
-### 11.5 5data.csv ###
 
-The "5data.csv" file is an example file using the optional toggle setting "7:
+### 11.5 5data.csv ###                                   <a id="11.05.00"></a>
+
+The ["5data.csv"][ex5] file is an example file using the optional toggle setting "7:
 Automatic Date Reading" (see section 6.2). It is assumed for this file that
 setting 7 is turned on, and no other optional settings are in use.
 
+[ex5]: examples/EXdata/5data.csv
 
-### 11.6 6data.csv ###
 
-The "6data.csv" file is an example file using the optional setting "8: Set
+### 11.6 6data.csv ###                                   <a id="11.06.00"></a>
+
+The ["6data.csv"][ex6] file is an example file using the optional setting "8: Set
 Default ID" (see section 6.2). It is assumed for this file that setting 8 has a
 valid asset ID entered, and no other optional settings are in use.
 
+[ex6]: examples/EXdata/6data.csv
 
-### 11.7 7data.csv ###
 
-The "7data.csv" file is an example file using the optional setting "9: Set
+### 11.7 7data.csv ###                                   <a id="11.07.00"></a>
+
+The ["7data.csv"][ex7] file is an example file using the optional setting "9: Set
 Default Unit" (see section 6.2). It is assumed for this file that setting 9 has
 a valid unit (registered in the CMMS) entered, and no other optional settings
 are in use.
 
+[ex7]: examples/EXdata/7data.csv
 
-### 11.8 8data.csv
 
-The "8data.csv" file is an example file using the optional setting "14: Work
+### 11.8 8data.csv ###                                   <a id="11.08.00"></a>
+
+The ["8data.csv"][ex8] file is an example file using the optional setting "14: Work
 Order ID Column Header" (see section 6.3). It is assumed for this file that
 setting 14 has a valid header name entered, and no other optional settings are
 in use.
 
+[ex8]: examples/EXdata/8data.csv
+
 <br>
 
 
-12 CHANGELOG
+12 CHANGELOG                                             <a id="12.00.00"></a>
 ------------
 
-### v1.4.1 ###
+#### v1.4.1 ####
 
 * Corrected the fileList position to be identical to the actual position
 * Minor change in internal documentation
@@ -706,7 +722,7 @@ in use.
 * Began file hosting on GitHub
 
 
-### v1.4 ###
+#### v1.4.0 ####
 
 * Changed the "Splitter" setting to "Delimiter" setting  
 * Made "Delimiter" setting usable without the "Meter Reading Only" setting  
@@ -719,7 +735,7 @@ in use.
   * For easier updating/version control  
 
 
-### v1.3 ###
+#### v1.3.0 ####
 
 * Improved the UI  
 * Decluttered the config.txt  
@@ -730,14 +746,14 @@ in use.
 * Updated the "README.txt" file
 
 
-### v1.2 ###
+#### v1.2.0 ####
 
 * Added the Format Setup section to the "config.txt" file  
 * Created a "README.txt" file  
 * Minor bug fixes  
 
 
-### v1.1 ###
+#### v1.1.0 ####
 
 * Added a "config.txt" file  
 * Bug fixes  
