@@ -96,7 +96,7 @@ in order to run the program, either Brackets or an alternative solution for
 hosting a server is required. Brackets can be downloaded from the following
 web page:
 
-⋅⋅⋅[http://brackets.io/][br]
+&nbsp;&nbsp;&nbsp;[http://brackets.io/][br]
 
 with or without Adobe Extract. If using the alternative solution provided by
 this README, see the "ALTERNATIVE" section.
@@ -111,16 +111,16 @@ Within the program folder where the runnable.html file is located, there is a
 folder named "data" which is used for placing CSV files in. The files must be
 named using the following format:
 
-⋅⋅⋅&#60;number\>&#60;name\>.csv
+&nbsp;&nbsp;&nbsp;&#60;number\>&#60;name\>.csv
 
 The &#60;name\> must be the same for every file, and the numbers must increment
 naturally, beginning at 1. For example:
 
-⋅⋅⋅1data.csv  
-⋅⋅⋅2data.csv  
-⋅⋅⋅3data.csv  
-⋅⋅⋅...  
-⋅⋅⋅15data.csv  
+&nbsp;&nbsp;&nbsp;1data.csv  
+&nbsp;&nbsp;&nbsp;2data.csv  
+&nbsp;&nbsp;&nbsp;3data.csv  
+&nbsp;&nbsp;&nbsp;...  
+&nbsp;&nbsp;&nbsp;15data.csv  
 
 The default configuration setting uses "data.csv" as the filename, but can
 be configured. The configuration file must be prepared before the first run, or
@@ -156,14 +156,14 @@ For example files using the various optional unrequired settings, see section
 
 The API setup has four requirements:
 
-⋅⋅⋅0:  API URL                                             - \[REQUIRED]  
-⋅⋅⋅1:  Application Key                                     - \[REQUIRED]  
-⋅⋅⋅2:  Access Key                                          - \[REQUIRED]  
-⋅⋅⋅3:  API Secret Key                                      - \[REQUIRED]
+&nbsp;&nbsp;&nbsp;0:  API URL                                   - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;1:  Application Key                           - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;2:  Access Key                                - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;3:  API Secret Key                            - \[REQUIRED]
 
 To learn about getting your API keys, go to the web page:
 
-⋅⋅⋅[http://www.maintenanceassistant.com/api/docs/guide.html][doc]
+&nbsp;&nbsp;&nbsp;[http://www.maintenanceassistant.com/api/docs/guide.html][doc]
 
 and see the section "Getting your API Access Keys".
 
@@ -174,12 +174,12 @@ and see the section "Getting your API Access Keys".
 
 The Format setup has two requirements and three optional values:
 
-⋅⋅⋅4:  Meter Reading Only                                 - \[REQUIRED] \[TOGGLE]  
-⋅⋅⋅5:  Delimiter                                          - \[NOT REQUIRED]  
-⋅⋅⋅6:  Quotation Wrapped Data                             - \[REQUIRED] \[TOGGLE]
-⋅⋅⋅7:  Automatic Date Reading                             - \[REQUIRED] \[TOGGLE]  
-⋅⋅⋅8:  Set Default ID                                     - \[NOT REQUIRED]  
-⋅⋅⋅9:  Set Default Unit                                   - \[NOT REQUIRED]
+&nbsp;&nbsp;&nbsp;4:  Meter Reading Only                       - \[REQUIRED] \[TOGGLE]  
+&nbsp;&nbsp;&nbsp;5:  Delimiter                                - \[NOT REQUIRED]  
+&nbsp;&nbsp;&nbsp;6:  Quotation Wrapped Data                   - \[REQUIRED] \[TOGGLE]
+&nbsp;&nbsp;&nbsp;7:  Automatic Date Reading                   - \[REQUIRED] \[TOGGLE]  
+&nbsp;&nbsp;&nbsp;8:  Set Default ID                           - \[NOT REQUIRED]  
+&nbsp;&nbsp;&nbsp;9:  Set Default Unit                         - \[NOT REQUIRED]
 
 
 #### 4:  Meter Reading Only ####
@@ -199,9 +199,9 @@ setting.
 An example would be using the vertical bar ("|") or ampersand ("&") instead of
 the comma as the delimiter for the CSV files.
 
-⋅⋅⋅id,Meter Reading,Unit,Date
-⋅⋅⋅id|Meter Reading|Unit|Date
-⋅⋅⋅id&Meter Reading&Unit&Date
+&nbsp;&nbsp;&nbsp;id,Meter Reading,Unit,Date
+&nbsp;&nbsp;&nbsp;id|Meter Reading|Unit|Date
+&nbsp;&nbsp;&nbsp;id&Meter Reading&Unit&Date
 
 **NOTE:**  
 The delimiter can be any length, not just one character, but it must remain
@@ -221,12 +221,12 @@ columns, without ruining the parsing of the data.
 In the following example, the headings "Meter, Reading" and "Meter, Unit" would
 be left alone.
 
-⋅⋅⋅"id","Meter, Reading","Meter, Unit","Date"
+&nbsp;&nbsp;&nbsp;"id","Meter, Reading","Meter, Unit","Date"
 
 Without the quotation wrapping, such as the following example, the headings
 would be separated into "id", "Meter", " Reading", "Meter", " Unit", "Date"
 
-⋅⋅⋅id,Meter, Reading,Meter, Unit,Date
+&nbsp;&nbsp;&nbsp;id,Meter, Reading,Meter, Unit,Date
 
 
 #### 7:  Automatic Date Reading ####
@@ -262,12 +262,12 @@ to each meter reading, regardless of any units in the file.
 
 The file setup has five requirements and an optional value:
 
-⋅⋅⋅10: File Name                                          - \[REQUIRED]  
-⋅⋅⋅11: Asset ID Column Header                             - \[REQUIRED]  
-⋅⋅⋅12: Meter Reading Value Column Header                  - \[REQUIRED]  
-⋅⋅⋅13: Meter Reading Value Unit Measurement Column Header - \[REQUIRED]  
-⋅⋅⋅14: Date Column Header                                 - \[REQUIRED]  
-⋅⋅⋅15: Work Order ID Column Header                        - \[NOT REQUIRED]
+&nbsp;&nbsp;&nbsp;10: File Name                                - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;11: Asset ID Column Header                   - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;12: Meter Reading Value Column Header        - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;13: Meter Reading Value Unit Measurement Column Header - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;14: Date Column Header                       - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;15: Work Order ID Column Header              - \[NOT REQUIRED]
 
 
 #### 10: File Name ####
@@ -343,8 +343,8 @@ For best results, the date data in the CSV files should be using RFC2822 format
 or ISO 8601 Date format. Any other format may result in unexpected values, and
 therefore should be avoided.
 
-⋅⋅⋅For RFC2822 Format, see [http://tools.ietf.org/html/rfc2822#page-14][RFC]  
-⋅⋅⋅For ISO 8601 Format, see [http://www.w3.org/TR/NOTE-datetime-970915.html][ISO]
+&nbsp;&nbsp;&nbsp;For RFC2822 Format, see [http://tools.ietf.org/html/rfc2822#page-14][RFC]  
+&nbsp;&nbsp;&nbsp;For ISO 8601 Format, see [http://www.w3.org/TR/NOTE-datetime-970915.html][ISO]
 
 If the Meter Reading Only setting (4) is toggled on, or the Automatic Date
 Reading setting (6) is toggled on, then the Date Column Header setting will
@@ -370,8 +370,8 @@ headers in the files, and only one column or string of data for meter readings.
 
 The batch setup has two requirements:
 
-⋅⋅⋅16: Maximum Batch Requests Per Minute                  - \[REQUIRED]  
-⋅⋅⋅17: Time Delay Between Files                           - \[REQUIRED]
+&nbsp;&nbsp;&nbsp;16: Maximum Batch Requests Per Minute        - \[REQUIRED]  
+&nbsp;&nbsp;&nbsp;17: Time Delay Between Files                 - \[REQUIRED]
 
 
 #### 16: Maximum Batch Requests Per Minute ####
@@ -401,7 +401,7 @@ The value is in minutes, and the default setting is half an hour.
 
 The reset setup has one requirement:
 
-⋅⋅⋅18: Reset The File And Position Tracking               - \[REQUIRED] \[TOGGLE]
+&nbsp;&nbsp;&nbsp;18: Reset The File And Position Tracking     - \[REQUIRED] \[TOGGLE]
 
 The reset option, which is either 0 or 1, is meant for resetting the position of
 the program's tracking. The program automatically saves how many files it has
@@ -536,26 +536,26 @@ Maintenance Assistant Labs Automated Meter Reading File Handler uses the bundled
 package of the Maintenance Assistant CMMS client for JavaScript which is
 available under the Apache License 2.0. For more information, see the files:
 
-⋅⋅⋅LICENSE.txt  
-⋅⋅⋅NOTICE.txt  
+&nbsp;&nbsp;&nbsp;LICENSE.txt  
+&nbsp;&nbsp;&nbsp;NOTICE.txt  
 
 Brackets is licensed under the MIT License. For more information, visit the
 web page:
 
-⋅⋅⋅[https://github.com/adobe/brackets/blob/master/LICENSE][BrL]
+&nbsp;&nbsp;&nbsp;[https://github.com/adobe/brackets/blob/master/LICENSE][BrL]
 
 Python is a trademark or registered trademark of the Python Software Foundation.
 Python, its standard libraries, and Jython, are distributed under the Python
 License. For more information, visit the web pages:
 
-⋅⋅⋅[https://www.python.org/psf/][Py]  
-⋅⋅⋅[https://docs.python.org/2/license.html][PyL]  
+&nbsp;&nbsp;&nbsp;[https://www.python.org/psf/][Py]  
+&nbsp;&nbsp;&nbsp;[https://docs.python.org/2/license.html][PyL]  
 
 Copyright (c) 2015 The JQuery Foundation.
 JQuery is licensed under the MIT license. For more information, visit the
 web page:
 
-⋅⋅⋅[https://tldrlegal.com/license/mit-license][JQL]
+&nbsp;&nbsp;&nbsp;[https://tldrlegal.com/license/mit-license][JQL]
 
 [BrL]: https://github.com/adobe/brackets/blob/master/LICENSE
 [Py]:  https://www.python.org/psf/
@@ -578,7 +578,7 @@ solution using Python's SimpleHTTPServer module.
 SimpleHTTPServer is a part of Python, and thus can be called easily from such.
 This example uses Python 2.7.9, which can be downloaded from the following link:
 
-⋅⋅⋅[https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi][Py2]
+&nbsp;&nbsp;&nbsp;[https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi][Py2]
 
 When the installer prompts the user to "Customize Python 2.7.9", be sure to
 check the "Add python.exe to Path" option. It must be set to "Entire feature
@@ -591,23 +591,23 @@ locate the directory containing the "Runnable.html" file. If you saved the
 "Automated Meter Reading Handler" to your desktop, and are running a windows
 operating system, then the command line entry may look similar to this:
 
-⋅⋅⋅`cd C:\Users\Bob\Desktop\Automated Meter Reading Handler`
+    cd C:\Users\Bob\Desktop\Automated Meter Reading Handler
 
 Once in the "Automated Meter Reading Handler" folder, enter the following:
 
-⋅⋅⋅`python -m SimpleHTTPServer`
+    python -m SimpleHTTPServer
 
 If the SimpleHTTPServer successfully runs, then in a browser type into the
 address bar:
 
-⋅⋅⋅`localhost:8000`
+    localhost:8000
 
 A directory of the folder will be shown. clicking on the "Runnable.html" link
 will begin the program.
 
 For more information, visit the web page:
 
-⋅⋅⋅[http://www.pythonforbeginners.com/modules-in-python/how-to-use-simplehttpserver/][PyB]
+&nbsp;&nbsp;&nbsp;[http://www.pythonforbeginners.com/modules-in-python/how-to-use-simplehttpserver/][PyB]
 
 [Py2]: https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi
 [PyB]: http://www.pythonforbeginners.com/modules-in-python/how-to-use-simplehttpserver/
