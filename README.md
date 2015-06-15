@@ -34,7 +34,7 @@ TABLE OF CONTENTS
    [11.6 6data.csv](#11.06.00)  
    [11.7 7data.csv](#11.07.00)  
    [11.8 8data.csv](#11.08.00)  
-12. [Changelog](#12.00.00)  
+12. [Change Log](#12.00.00)  
 
 <br>
 
@@ -783,8 +783,8 @@ in use.
 <br>
 
 <a id="12.00.00"></a>
-12 CHANGELOG
-------------
+12 CHANGE LOG
+-------------
 
 #### v1.4.1 ####
 
