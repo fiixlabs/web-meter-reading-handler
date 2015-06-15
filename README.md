@@ -65,9 +65,10 @@ For convenience, this program uses Brackets to open and run the html script. A
 file which can run without Brackets is included, and explained in the
 "ALTERNATIVE" section.
 
-Before attempting to run the program, please be sure to extract all of the files
+For those who downloaded the package from the Maintenance Assistant website:
+before attempting to run the program, please be sure to extract all of the files
 from the "Automated Meter Reading Handler v.1.4.zip" file. The program cannot be
-run from the zip file.
+run from the .zip package.
 
 For a simple step-by-step guide to setting up this program, see the file named
 "Step-By-Step Beginner Guide.txt".
