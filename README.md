@@ -53,7 +53,7 @@ v1.3.0 Created May 21,  2015 by Jake Uskoski
 v1.4.0 Created June 4,  2015 by Jake Uskoski  
 v1.4.1 Created June 11, 2015 by Jake Uskoski
 
-[Back to Top]
+[Back to Top][top]
 <br>
 
 2  INTRODUCTION
