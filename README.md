@@ -659,6 +659,13 @@ The "EXdata" folder contains seven different files. Each file is an example for
 the different optional settings. For more information on the specifics of each
 file, see below.
 
+If viewing from GitHub:
+it is **highly recommended** that the raws of the example files be viewed
+instead of the nicely formatted tables provided. The reason for this is that
+the GitHub formatter hides things like the commas and quotations, and otherwise
+has trouble viewing the more irregular CSV examples in the folder.
+
+If viewing from a computer:
 It is **highly recommended** that the example files are opened using Notepad (if
 using Windows), or an equivalent basic text editing program. Viewing the files
 in a spreadsheet application, such as Microsoft Excel, can result in unexpected
