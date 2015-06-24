@@ -70,8 +70,7 @@ file which can run without Brackets is included, and explained in the
 
 For those who downloaded the package from the Maintenance Assistant website:
 before attempting to run the program, please be sure to extract all of the files
-from the "Automated Meter Reading Handler v.1.4.zip" file. The program cannot be
-run from the .zip package.
+from the ZIP package. The program cannot be run from the ZIP package.
 
 For a simple step-by-step guide to setting up this program, see the file named
 "Step-By-Step Beginner Guide.txt".
