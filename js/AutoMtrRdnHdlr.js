@@ -124,7 +124,8 @@ function fetchConfig() {
     //Reads the config.txt file
     $.get("config/config.txt", function(data) {
         //Separates by line
-        arrData = data.split(/\r\n/);
+        data = data.replace('\r', '');
+        arrData = data.split(/\n/);
         intLength = arrData.length;
 
         //Reads through each line, looking for ones beginning with a tilde ('~')

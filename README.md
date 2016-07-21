@@ -34,6 +34,7 @@ TABLE OF CONTENTS
    11.7 [7data.csv](#117-7datacsv)  
    11.8 [8data.csv](#118-8datacsv)  
 12. [Change Log](#12-change-log)  
+   [v1.4.2](#v142)  
    [v1.4.1](#v141)  
    [v1.4.0](#v140)  
    [v1.3.0](#v130)  
@@ -51,7 +52,8 @@ v1.1.0 Created May 8,   2015 by Jake Uskoski
 v1.2.0 Created May 12,  2015 by Jake Uskoski  
 v1.3.0 Created May 21,  2015 by Jake Uskoski  
 v1.4.0 Created June 4,  2015 by Jake Uskoski  
-v1.4.1 Created June 11, 2015 by Jake Uskoski
+v1.4.1 Created June 11, 2015 by Jake Uskoski  
+v1.4.2 Created July 21, 2016 by Jake Uskoski
 
 [Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
 <br>
@@ -760,6 +762,13 @@ in use.
 
 12 CHANGE LOG
 -------------
+
+#### v1.4.2 ####
+
+* Fixed the config.txt parser to better handle newline character sequences across
+  different operating systems
+
+[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
 
 #### v1.4.1 ####
 
