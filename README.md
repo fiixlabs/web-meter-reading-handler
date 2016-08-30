@@ -1,5 +1,5 @@
-MA Labs Automated Meter Reading File Handler V.1.4
---------------------------------------------------
+Automated Meter Reading File Handler V.1.4
+------------------------------------------
 - - -
 <br>
 
@@ -34,6 +34,7 @@ TABLE OF CONTENTS
    11.7 [7data.csv](#117-7datacsv)  
    11.8 [8data.csv](#118-8datacsv)  
 12. [Change Log](#12-change-log)  
+   [v1.4.3](#v143)  
    [v1.4.2](#v142)  
    [v1.4.1](#v141)  
    [v1.4.0](#v140)  
@@ -47,15 +48,16 @@ TABLE OF CONTENTS
 1  AUTHORS &amp; CONTRIBUTORS
 -----------------------------
 
-v1.0.0 Created May 5,   2015 by Jake Uskoski  
-v1.1.0 Created May 8,   2015 by Jake Uskoski  
-v1.2.0 Created May 12,  2015 by Jake Uskoski  
-v1.3.0 Created May 21,  2015 by Jake Uskoski  
-v1.4.0 Created June 4,  2015 by Jake Uskoski  
-v1.4.1 Created June 11, 2015 by Jake Uskoski  
-v1.4.2 Created July 21, 2016 by Jake Uskoski
+v1.0.0         Created May 5,   2015 by Jake Uskoski  
+[v1.1.0](#110) Created May 8,   2015 by Jake Uskoski  
+[v1.2.0](#120) Created May 12,  2015 by Jake Uskoski  
+[v1.3.0](#130) Created May 21,  2015 by Jake Uskoski  
+[v1.4.0](#140) Created June 4,  2015 by Jake Uskoski  
+[v1.4.1](#141) Created June 11, 2015 by Jake Uskoski  
+[v1.4.2](#142) Created July 21, 2016 by Jake Uskoski
+[v1.4.3](#143) Created Aug 25,  2016 by Jake Uskoski
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 <br>
 
 2  INTRODUCTION
@@ -63,21 +65,21 @@ v1.4.2 Created July 21, 2016 by Jake Uskoski
 
 The Automated Meter Reading File Handler is a program which takes CSV files from
 its designated folder, formats the necessary information, and sends the data to
-the Maintenance Assistant CMMS, through the use of the Maintenance Assistant
-JavaScript API. The program runs as an html page in an internet browser.
+your CMMS, through the use of the Fiix JavaScript API. The program runs as an
+html page in an internet browser.
 
 For convenience, this program uses Brackets to open and run the html script. A
 file which can run without Brackets is included, and explained in the
 "ALTERNATIVE" section.
 
-For those who downloaded the package from the Maintenance Assistant website:
-before attempting to run the program, please be sure to extract all of the files
-from the ZIP package. The program cannot be run from the ZIP package.
+For those who downloaded the package from [Fiix][fiix]: before attempting to run
+the program, please be sure to extract all of the files from the ZIP package.
+The program cannot be run from the ZIP package.
 
 For a simple step-by-step guide to setting up this program, see the file named
 "Step-By-Step Beginner Guide.txt".
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 <br>
 
 3  REQUIREMENTS
@@ -88,10 +90,13 @@ For a simple step-by-step guide to setting up this program, see the file named
 2. Brackets text editor, with or without Extract by Adobe
   * Available at [http://brackets.io/][br]
 3. A stable internet connection
+4. Fiix
+  * Available at [www.fiixsoftware.com][fiix]
 
   [br]:  http://brackets.io/
+  [fiix]: https://www.fiixsoftware.com
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 <br>
 
 4  INSTALLATION
@@ -107,7 +112,7 @@ web page:
 with or without Adobe Extract. If using the alternative solution provided by
 this README, see the "ALTERNATIVE" section.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 <br>
 
 5  SETUP
@@ -132,7 +137,7 @@ The default configuration setting uses "data.csv" as the filename, but can
 be configured. The configuration file must be prepared before the first run, or
 else the program will fail to function. See "CONFIGURATION" for more details.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 <br>
 
 6  CONFIGURATION
@@ -157,7 +162,7 @@ and deleting tildes.
 For example files using the various optional unrequired settings, see section
 11.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 ### 6.1  API SETUP ###
 
@@ -170,13 +175,13 @@ The API setup has four requirements:
 
 To learn about getting your API keys, go to the web page:
 
-&nbsp;&nbsp;&nbsp;[http://www.maintenanceassistant.com/api/docs/guide.html][doc]
+&nbsp;&nbsp;&nbsp;[http://www.fiixsoftware.com/api/docs/guide.html][doc]
 
 and see the section "Getting your API Access Keys".
 
-[doc]: http://www.maintenanceassistant.com/api/docs/guide.html
+[doc]: http://www.fiixsoftware.com/api/docs/guide.html
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 ### 6.2  FORMAT SETUP ###
 
@@ -189,7 +194,7 @@ The Format setup has two requirements and three optional values:
 &nbsp;&nbsp;&nbsp;8:  [Set Default ID](#8--set-default-id)                            - \[NOT REQUIRED]  
 &nbsp;&nbsp;&nbsp;9:  [Set Default Unit](#9--set-default-unit)                        - \[NOT REQUIRED]
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### 4:  Meter Reading Only ####
 
@@ -197,7 +202,7 @@ This setting is for cases where the files being placed in the "data" folder only
 contain a single column (or single string) of meter reading data, and nothing
 else.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### 5:  Delimiter ####
 
@@ -220,7 +225,7 @@ folder. Using different delimiters will result in the data not being separated
 properly, leading to improper amounts of batches and continuously failing
 attempts to send data to the CMMS.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### 6:  Quotation Wrapped Data ####
 
@@ -239,7 +244,7 @@ would be separated into "id", "Meter", " Reading", "Meter", " Unit", "Date"
 
 &nbsp;&nbsp;&nbsp;id,Meter, Reading,Meter, Unit,Date
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### 7:  Automatic Date Reading ####
 
@@ -250,7 +255,7 @@ setting (4) is toggled on, then the Automatic Date Reading setting is
 required to be on as well, but the Automatic Date Reading setting can also be
 toggled on without the Meter Reading Only setting.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### 8:  Set Default ID ####
 
@@ -262,7 +267,7 @@ reading, regardless of any IDs in the file.
 Like the Automatic Date Reading setting (6), the Set Default ID setting is
 required when the Meter Reading Only setting (4) is toggled on.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### 9:  Set Default Unit ####
 
@@ -271,7 +276,7 @@ override the Meter Reading Value Unit Measurement Column Header setting (12)
 and attach whatever unit that has been entered in the Set Default Unit setting
 to each meter reading, regardless of any units in the file.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 ### 6.3  FILE SETUP ###
 
@@ -287,7 +292,7 @@ The file setup has five requirements and an optional value:
   [MRV]:  #12-meter-reading-value-column-header
   [MRU]:  #13-meter-reading-value-unit-measurement-column-header
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### 10: File Name ####
 
@@ -295,7 +300,7 @@ File Name refers to the names given to all of the
 files in the "data" folder. The name must include the ".csv" and cannot include
 any numbers. Leaving the File Name empty ("~") results in a fatal error.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### 11: Asset ID Column Header ####
 
@@ -325,7 +330,7 @@ ignored, under the assumption that there are no headers in the files, and only
 one column or string of data for meter readings, or the assumption that the
 configured default is the correct value.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### 12: Meter Reading Value Column Header ####
 
@@ -339,7 +344,7 @@ Value Column Header setting will be ignored, under the assumption that there are
 no headers in the files, and only one column or string of data for meter
 readings.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### 13: Meter Reading Value Unit Measurement Column Header ####
 
@@ -354,7 +359,7 @@ Column Header setting will be ignored, under the assumption that there are no
 headers in the files, and only one column or string of data for meter readings,
 or the assumption that the configured default is the correct value.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### 14: Date Column Header ####
 
@@ -378,7 +383,7 @@ configured default is the correct value.
 [RFC]: http://tools.ietf.org/html/rfc2822#page-14
 [ISO]: http://www.w3.org/TR/NOTE-datetime-970915.html  
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### 15: Work Order ID Column Header ####
 
@@ -389,7 +394,7 @@ If the Meter Reading Only setting (4) is toggled on, then the Work Order ID
 Column Header setting will be ignored, under the assumption that there are no
 headers in the files, and only one column or string of data for meter readings.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 ### 6.4  BATCH SETUP ###
 
@@ -400,7 +405,7 @@ The batch setup has two requirements:
 
   [MBM]: #16-maximum-batch-requests-per-minute
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### 16: Maximum Batch Requests Per Minute ####
 
@@ -414,7 +419,7 @@ two hundred meter readings from the CSV file currently being read to the CMMS.
 Due to the nature of the program, all two hundred will be sent at once, and then
 a minute delay will begin after the server responds, to prevent throttling.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### 17: Time Delay Between Files ####
 
@@ -426,7 +431,7 @@ for the program to read, before the next check. It also gives time for any
 internet instability to resolve before re attempting to send files to the CMMS.
 The value is in minutes, and the default setting is half an hour.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 ### 6.5  RESET ###
 
@@ -448,7 +453,7 @@ should be avoided. Position tracking should only be reset if the files in the
 "data" folder are being removed from the folder and new files beginning at "1"
 are being placed in the "data" folder.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 <br>
 
 7  RUNNING
@@ -460,7 +465,7 @@ in the File menu. The program will begin running, and if everything is prepared
 properly with a stable internet connection, the program will start sending the
 meter reading data from the CSV files to the CMMS.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 <br>
 
 8  TROUBLESHOOTING
@@ -524,7 +529,7 @@ The following are any of the possible documented errors:
 
 Any other errors which occur without a status message are unknown.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 ### 8.1  API CONNECTING ###
 
@@ -541,7 +546,7 @@ From a desktop view of the CMMS:
    general settings. Change the setting if it is not.
 7. Click save at the top of the screen.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 ### 8.2  ADDING UNITS ###
   
@@ -559,15 +564,15 @@ From a desktop view of the CMMS:
 9. Click the small "x" at the top of the pop-up boxes to close the meter
    reading without making a new one.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 <br>
 
 9  LICENSING
 ------------
 
-Maintenance Assistant Labs Automated Meter Reading File Handler uses the bundled
-package of the Maintenance Assistant CMMS client for JavaScript which is
-available under the Apache License 2.0. For more information, see the files:
+The Automated Meter Reading File Handler uses the bundled package of the Fiix
+client for JavaScript which is available under the Apache License 2.0. For more
+information, see the files:
 
 &nbsp;&nbsp;&nbsp;LICENSE.txt  
 &nbsp;&nbsp;&nbsp;NOTICE.txt  
@@ -595,7 +600,7 @@ web page:
 [PyL]: https://docs.python.org/2/license.html
 [JQL]: https://tldrlegal.com/license/mit-license
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 <br>
 
 10 ALTERNATIVE
@@ -605,7 +610,7 @@ Running the program without Brackets requires generating a server. A simple
 solution is to generate a simple server to run localhost. Below is an example
 solution using Python's SimpleHTTPServer module.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 ### 10.1 SIMPLEHTTPSERVER ###
 
@@ -646,7 +651,7 @@ For more information, visit the web page:
 [Py2]: https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi
 [PyB]: http://www.pythonforbeginners.com/modules-in-python/how-to-use-simplehttpserver/
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 <br>
 
 11 EXAMPLES
@@ -672,7 +677,7 @@ using Windows), or an equivalent basic text editing program. Viewing the files
 in a spreadsheet application, such as Microsoft Excel, can result in unexpected
 issues with the viewing of the data and formatting of the examples.
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 ### 11.1 1data.csv ###
 
@@ -685,7 +690,7 @@ The header names are configurable (see section 6.3).
 
   [ex1]:  examples/EXdata/1data.csv
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 ### 11.2 2data.csv ###
 
@@ -695,7 +700,7 @@ Meter Reading Only" (see section 6.2). It is assumed for this file that setting
 
   [ex2]:  examples/EXdata/2data.csv
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 ### 11.3 3data.csv ###
 
@@ -705,7 +710,7 @@ been set to "^", and no other optional settings are in use.
 
   [ex3]:  examples/EXdata/3data.csv
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 ### 11.4 4data.csv ###
 
@@ -715,7 +720,7 @@ setting 6 is turned on, and no other optional settings are in use.
 
   [ex4]:  examples/EXdata/4data.csv
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 ### 11.5 5data.csv ###
 
@@ -725,7 +730,7 @@ setting 7 is turned on, and no other optional settings are in use.
 
   [ex5]:  examples/EXdata/5data.csv
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 ### 11.6 6data.csv ###
 
@@ -735,7 +740,7 @@ valid asset ID entered, and no other optional settings are in use.
 
   [ex6]:  examples/EXdata/6data.csv
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 ### 11.7 7data.csv ###
 
@@ -746,7 +751,7 @@ are in use.
 
   [ex7]:  examples/EXdata/7data.csv
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 ### 11.8 8data.csv ###
 
@@ -757,18 +762,24 @@ in use.
 
   [ex8]:  examples/EXdata/8data.csv
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 <br>
 
 12 CHANGE LOG
 -------------
+
+#### v1.4.3 ####
+
+* Altered documentation and files to reflect branding changes
+
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### v1.4.2 ####
 
 * Fixed the config.txt parser to better handle newline character sequences across
   different operating systems
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### v1.4.1 ####
 
@@ -777,7 +788,7 @@ in use.
   * Corrected the stringFormat at-a-glance explanation
 * Began file hosting on GitHub
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### v1.4.0 ####
 
@@ -791,7 +802,7 @@ in use.
 * Added information to the top of the code  
   * For easier updating/version control  
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### v1.3.0 ####
 
@@ -803,7 +814,7 @@ in use.
 * Minor bug fixes  
 * Updated the "README.txt" file
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### v1.2.0 ####
 
@@ -811,11 +822,11 @@ in use.
 * Created a "README.txt" file  
 * Minor bug fixes  
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)
 
 #### v1.1.0 ####
 
 * Added a "config.txt" file  
 * Bug fixes  
 
-[Back to Top](#ma-labs-automated-meter-reading-file-handler-v14)
+[Back to Top](#automated-meter-reading-file-handler-v14)

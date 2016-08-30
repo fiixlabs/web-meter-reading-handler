@@ -5,20 +5,20 @@
 //Created On: May 5, 2015////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 //Last Modified By: Jake Uskoski/////////////////////////////////////////////////
-//Last Modified On: July 21, 2016////////////////////////////////////////////////
-//Email: jake.uskoski@maintenanceassistant.com///////////////////////////////////
+//Last Modified On: August 25, 2016//////////////////////////////////////////////
+//Email: jake.uskoski@fiixsoftware.com///////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 //Version Number: 1.4.2//////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
-//Maintenance Assistant//////////////////////////////////////////////////////////
-//www.maintenanceassistant.com///////////////////////////////////////////////////
+//Fiix///////////////////////////////////////////////////////////////////////////
+//www.fiixsoftware.com///////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
 
 ////////////////////INITIALIZATION///////////////////////////////////////////////
 //Begins the program/////////////////////////////////////////////////////////////
 document.getElementById("title").innerHTML = ////////////////////////////////////
-    "MA Labs Automated Meter Reading Handler v1.4";//////////////////////////////
+    "Automated Meter Reading Handler v1.4";//////////////////////////////////////
 program();///////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -338,11 +338,11 @@ function fetchConfig() {
 }///////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 //Gets the information for units from the CMMS server////////////////////////////
-function fetchUnitDB(maCmmsClient) {
+function fetchUnitDB(client) {
     var def = new $.Deferred();
 
     //Fetches the Unit information from the server
-    maCmmsClient.find({
+    client.find({
         "className": "MeterReadingUnit",
         "fields": "strName, id",
         "callback": function(ret) {
@@ -563,11 +563,11 @@ function fetchFileDB(objUnitDB, objConfig) {
 
 ////////////////////BATCH FUNCTIONS///////////////////////////////////////////////
 //Pings the server to check for a correct API setup///////////////////////////////
-function ping(maCmmsClient) {
+function ping(client) {
     var def = new $.Deferred();
 
     //Pings the server, checking for a connection
-    maCmmsClient.rpc({
+    client.rpc({
         "name": "Ping",
         "callback": function(ret) {
             //Returns a success or failure
@@ -583,7 +583,7 @@ function ping(maCmmsClient) {
 }///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //Uses the formatted data to create an array for batching/////////////////////////
-function prepBatch(maCmmsClient, objFormatted, objConfig) {
+function prepBatch(client, objFormatted, objConfig) {
     var intLength = objFormatted.length,
         arrBatchDB,
         arrPushDB,
@@ -623,7 +623,7 @@ function prepBatch(maCmmsClient, objFormatted, objConfig) {
     
         //Creates a batch request
         for(var i = intPosition; ((i < holder) && (i < intLength)); i += 1) {
-            arrPushDB[j][k] = maCmmsClient.prepareAdd(arrBatchDB[i]);
+            arrPushDB[j][k] = client.prepareAdd(arrBatchDB[i]);
             intPosition += 1;
             k += 1;
         }
@@ -640,7 +640,7 @@ function prepBatch(maCmmsClient, objFormatted, objConfig) {
 }/////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //Recursive batching function, pushes a batch to the server once a minute/////////
-function pushBatch(maCmmsClient, objConfig, arrToPush, j, intError) {
+function pushBatch(client, objConfig, arrToPush, j, intError) {
     var objPush,
         intLength = arrToPush.length;
 
@@ -670,7 +670,7 @@ function pushBatch(maCmmsClient, objConfig, arrToPush, j, intError) {
                     document.getElementById("delay").innerHTML += "<br>The program can be safely exited currently.";
 
                     //Delay a minute before recursion, clearing the error count
-                    setTimeout(function(){pushBatch(maCmmsClient, objConfig, arrToPush, j, 0);}, 61*1000);
+                    setTimeout(function(){pushBatch(client, objConfig, arrToPush, j, 0);}, 61*1000);
                 } else {
                     //Stops calling the pushBatch recursion
                     //Increments the value of which file is to be read & resets the position in the file for the next one
@@ -682,7 +682,7 @@ function pushBatch(maCmmsClient, objConfig, arrToPush, j, intError) {
                     document.getElementById("batchFinal").innerHTML = "File " + fetchStorage("fileList") + " completed.";
 
                     //Moves back into the Runnable loop
-                    endCycle(maCmmsClient, objConfig);
+                    endCycle(client, objConfig);
                 }
             } else {
                 //Reduces the amount of remaining errors for the current batch
@@ -700,20 +700,20 @@ function pushBatch(maCmmsClient, objConfig, arrToPush, j, intError) {
                     document.getElementById("delay").innerHTML += "<br>The program can be safely exited currently.";
 
                     //Reattempt the batch after a minute
-                    setTimeout(function(){pushBatch(maCmmsClient, objConfig, arrToPush, j, intError);}, 61*1000);
+                    setTimeout(function(){pushBatch(client, objConfig, arrToPush, j, intError);}, 61*1000);
                 } else {
                     //Stops calling the pushBatch recursion,
                     //exiting out of the batch recursion and returning to the runnable recursion
                     document.getElementById("batchFinal").innerHTML =
                         "File " + fetchStorage("fileList") + objConfig.FNames + " was not completed";
-                    endCycle(maCmmsClient, objConfig);
+                    endCycle(client, objConfig);
                 }
             }
         }
     }
 
     //sends the batch request. This is the real magic
-    maCmmsClient.batch(objPush);
+    client.batch(objPush);
 }///////
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -722,7 +722,7 @@ function pushBatch(maCmmsClient, objConfig, arrToPush, j, intError) {
 //Program Function, gets the configuration file data and begins the program///////
 function program() {
     var prmConfig,
-        maCmmsClient,
+        client,
         retPing;
 
     //Clears the error report of there being an issue with the JavaScript if the script works
@@ -736,14 +736,14 @@ function program() {
             document.getElementById("status").innerHTML = "STATUS: Successfully obtained config.txt.";
             
             //API Connection Setup
-            maCmmsClient = new MaCmmsClient();
-            maCmmsClient.setBaseUri(objConfig.APIURL);
-            maCmmsClient.setAppKey(objConfig.APIKey);
-            maCmmsClient.setAuthToken(objConfig.APIAcs);
-            maCmmsClient.setPKey(objConfig.APISrt);
+            client = new MaCmmsClient();
+            client.setBaseUri(objConfig.APIURL);
+            client.setAppKey(objConfig.APIKey);
+            client.setAuthToken(objConfig.APIAcs);
+            client.setPKey(objConfig.APISrt);
 
             //Pings the server to check if the API was properly set up
-            retPing = ping(maCmmsClient);
+            retPing = ping(client);
             retPing.then(function(prmPing) {
                 if(prmPing !== false) {
                     document.getElementById("status").innerHTML = "STATUS: CMMS successfully called.";
@@ -755,7 +755,7 @@ function program() {
                     }
                     
                     //Begins running the program
-                    runnable(maCmmsClient, objConfig);
+                    runnable(client, objConfig);
                 } else {
                     //Outputs failure for user
                     document.getElementById("status").innerHTML = "STATUS: Unable to proceed. CMMS could not be called.";
@@ -782,7 +782,7 @@ function program() {
 }////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //Control Function, runs the program//////////////////////////////////////////////
-function runnable(maCmmsClient, objConfig) {
+function runnable(client, objConfig) {
     var prmDB,
         prmFile,
         objUnitDB,
@@ -793,7 +793,7 @@ function runnable(maCmmsClient, objConfig) {
     clear();
 
     //Gets the server's IDs for the different measurements
-    objUnitDB = fetchUnitDB(maCmmsClient);
+    objUnitDB = fetchUnitDB(client);
     objUnitDB.then(function(prmDB) {
         
         //If the unit IDs were successfully obtained, continues
@@ -808,37 +808,37 @@ function runnable(maCmmsClient, objConfig) {
                     
                     //Prepares to begin batching
                     document.getElementById("status").innerHTML = "STATUS: CSV file successfully found and formatted.";
-                    arrPush = prepBatch(maCmmsClient, prmFile, objConfig);
+                    arrPush = prepBatch(client, prmFile, objConfig);
 
                     //Recursive batch call basedon the file read and the last known position of the file, if it failed earlier
-                    pushBatch(maCmmsClient, objConfig, arrPush, fetchStorage("filePosition"), 0);
+                    pushBatch(client, objConfig, arrPush, fetchStorage("filePosition"), 0);
                 } else {
                     //Outputs for the user, and prepares for the next iteration of the runnable loop
                     document.getElementById("status").innerHTML = "STATUS: Failed to obtain or format the CSV file data.";
-                    endCycle(maCmmsClient, objConfig);
+                    endCycle(client, objConfig);
                 }
             }).fail(function() {
                 //In case of a failed promise
                 document.getElementById("status").innerHTML =
                     "STATUS: Failed to find the CSV file " + (localStorage.getItem("fileList") + 1) + objConfig.FNames + ".";
-                endCycle(maCmmsClient, objConfig);
+                endCycle(client, objConfig);
             });
         } else {
-            endCycle(maCmmsClient, objConfig);
+            endCycle(client, objConfig);
         }
     }).fail(function() {
         //In case of a failed promise
         document.getElementById("status").innerHTML =
             "STATUS: Attempt to fetch the unit information from the server was unsuccessful.";
-        endCycle(maCmmsClient, objConfig);
+        endCycle(client, objConfig);
     });
 }////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //Cleanup Code////////////////////////////////////////////////////////////////////
-function endCycle(maCmmsClient, objConfig) {
+function endCycle(client, objConfig) {
     //Creates a loop back into the runnable
     document.getElementById("delay").innerHTML = "Time of next file read:" + formatTime(objConfig.FDelay*60) + "<br>";
     document.getElementById("delay").innerHTML += "The program can be safely exited currently.";
-    setTimeout(function() {runnable(maCmmsClient, objConfig);}, objConfig.FDelay*60*1000);
+    setTimeout(function() {runnable(client, objConfig);}, objConfig.FDelay*60*1000);
 }////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
