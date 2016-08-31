@@ -54,8 +54,8 @@ v1.0.0         Created May 5,   2015 by Jake Uskoski
 [v1.3.0](#130) Created May 21,  2015 by Jake Uskoski  
 [v1.4.0](#140) Created June 4,  2015 by Jake Uskoski  
 [v1.4.1](#141) Created June 11, 2015 by Jake Uskoski  
-[v1.4.2](#142) Created July 21, 2016 by Jake Uskoski
-[v1.4.3](#143) Created Aug 25,  2016 by Jake Uskoski
+[v1.4.2](#142) Created July 21, 2016 by Jake Uskoski  
+[v1.4.3](#143) Created Aug 25,  2016 by Jake Uskoski  
 
 [Back to Top](#automated-meter-reading-file-handler-v14)
 <br>
